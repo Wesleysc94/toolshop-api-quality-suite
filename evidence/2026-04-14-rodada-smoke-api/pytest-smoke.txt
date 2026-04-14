@@ -1,0 +1,12 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: toolshop-api-quality-suite
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.13.0
+collected 11 items / 4 deselected / 7 selected
+
+tests\test_api_smoke.py .......                                          [100%]
+
+- generated xml file: evidence/2026-04-14-rodada-smoke-api/pytest-smoke.xml -
+====================== 7 passed, 4 deselected in 11.47s =======================

@@ -1,0 +1,46 @@
+GUIA DE REVISAO
+
+OBJETIVO
+
+Este repositorio apresenta a primeira etapa de automacao de API do ecossistema Practice Software Testing.
+
+O foco aqui e mostrar:
+
+- quais endpoints entraram na primeira fase
+- como a suite foi organizada
+- quais validacoes foram executadas
+- qual foi o resultado da primeira rodada
+
+ORDEM DE LEITURA RECOMENDADA
+
+1. Ler RESUMO-DO-PROJETO.txt
+2. Ler README.md
+3. Ler docs/escopo-da-api.md
+4. Ler execution-reports/2026-04-14-rodada-smoke-api-01.md
+5. Ler tests/test_api_smoke.py
+6. Ler tests/test_api_negative.py
+7. Conferir as evidencias em evidence/
+
+API SOB TESTE
+
+- base URL: https://api.practicesoftwaretesting.com
+- frontend relacionado: https://practicesoftwaretesting.com/
+- referencia complementar: https://practiceautomatedtesting.com/api
+
+COMO VALIDAR OS RESULTADOS
+
+1. Criar um ambiente virtual Python.
+2. Instalar dependencias com python -m pip install -e .
+3. Rodar python -m pytest -m smoke.
+4. Rodar python -m pytest -m negative.
+
+RESULTADO ATUAL
+
+- 7 testes smoke aprovados
+- 4 testes negativos aprovados
+- 11 testes aprovados no total
+
+CREDENCIAIS DEMO USADAS
+
+- email: customer@practicesoftwaretesting.com
+- senha: welcome01

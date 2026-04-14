@@ -1,0 +1,58 @@
+TOOLSHOP API QUALITY SUITE - RESUMO DO PROJETO
+
+O QUE E ESTE REPOSITORIO
+
+Este projeto apresenta a primeira etapa de automacao de API para o ecossistema Practice Software Testing.
+
+OBJETIVO
+
+Registrar de forma clara:
+
+- quais endpoints foram priorizados
+- como a suite foi organizada
+- o que foi validado
+- qual foi o resultado da primeira rodada
+
+ESCOPO DESTA ETAPA
+
+- produtos
+- detalhe de produto
+- marcas
+- categorias
+- login
+- usuario autenticado
+- criacao de carrinho
+- leitura de carrinho
+- cenarios negativos basicos
+
+O QUE FOI EXECUTADO
+
+Em 2026-04-14, foi executada a primeira rodada automatizada da API.
+
+PRINCIPAIS RESULTADOS
+
+- 7 testes smoke passaram
+- 4 testes negativos passaram
+- 11 testes passaram no total
+- o catalogo respondeu corretamente
+- a autenticacao funcionou com a conta demo oficial
+- a consulta de usuario autenticado funcionou
+- a criacao e leitura de carrinho funcionaram
+- os cenarios negativos principais responderam com os status esperados
+
+COMO VALIDAR O PROJETO
+
+- instalar as dependencias do projeto
+- rodar `python -m pytest -m smoke`
+- rodar `python -m pytest -m negative`
+- conferir o relatorio e as evidencias da rodada
+
+ARQUIVOS PRINCIPAIS
+
+- README.md
+- docs/guia-de-revisao.md
+- docs/guia-de-revisao.txt
+- tests/test_api_smoke.py
+- tests/test_api_negative.py
+- execution-reports/2026-04-14-rodada-smoke-api-01.md
+- execution-reports/2026-04-14-rodada-smoke-api-01.txt

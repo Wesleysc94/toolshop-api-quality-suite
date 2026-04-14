@@ -1,0 +1,35 @@
+TOOLSHOP API QUALITY SUITE - LEITURA INICIAL
+
+Este arquivo apresenta uma visao rapida do projeto.
+
+VISAO GERAL
+
+- A base principal da etapa esta pronta.
+- A primeira suite automatizada ja foi criada.
+- A rodada inicial foi executada contra a API real.
+- O projeto cobre smoke e cenarios negativos basicos.
+- O resultado atual da rodada e de 11 testes aprovados.
+
+ORDEM DE LEITURA SUGERIDA
+
+1. RESUMO-DO-PROJETO.txt
+   Apresenta a visao geral da etapa em leitura curta.
+
+2. README.md
+   Mostra objetivo, escopo, estrutura e status atual.
+
+3. execution-reports\2026-04-14-rodada-smoke-api-01.md
+   Resume a primeira execucao automatizada.
+
+4. tests\test_api_smoke.py
+   Mostra a cobertura principal da suite.
+
+5. tests\test_api_negative.py
+   Mostra os cenarios negativos da primeira fase.
+
+COMO VALIDAR O PROJETO
+
+- A API testada e publica.
+- Os comandos de execucao estao descritos no README.
+- O relatorio da rodada registra o resultado observado.
+- As evidencias da execucao estao organizadas na pasta evidence.
