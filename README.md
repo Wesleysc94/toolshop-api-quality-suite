@@ -1,87 +1,135 @@
-# toolshop-api-quality-suite
+# 🔌 toolshop-api-quality-suite
 
-Projeto de automacao de API construido sobre a API publica usada pelo ecossistema **Practice Software Testing**.
+> Suite de automação de API com Python, pytest e httpx aplicada ao ecossistema Practice Software Testing.
 
-Este repositorio apresenta a primeira suite automatizada de API do portfolio, com foco em catalogo, autenticacao, usuario autenticado, carrinho e cenarios negativos basicos.
+[![Python](https://img.shields.io/badge/Python-pytest-3776AB?logo=python&logoColor=white)]()
+[![Testes](https://img.shields.io/badge/Testes-11%20aprovados-brightgreen)]()
+[![Produto](https://img.shields.io/badge/Produto-Practice%20Software%20Testing-blue)](https://practicesoftwaretesting.com/)
 
-## Visao Geral
+📦 **Parte do portfolio:** [toolshop-quality-portfolio](https://github.com/Wesleysc94/toolshop-quality-portfolio)
 
-A proposta desta etapa foi mostrar:
+---
 
-- quais endpoints entraram na primeira fase
-- como a suite foi organizada
-- o que foi validado na rodada inicial
-- como a execucao pode ser reproduzida
+## Objetivo
 
-## API Sob Teste
+Validar a camada de serviço da aplicação Practice Software Testing através de testes automatizados de API. Enquanto a suite E2E verifica o comportamento do usuário no navegador, esta suite verifica se os dados e regras de negócio estão corretos na API que alimenta a aplicação.
 
-- Base URL: https://api.practicesoftwaretesting.com
-- Frontend relacionado: https://practicesoftwaretesting.com/
-- Referencia complementar: https://practiceautomatedtesting.com/api
+---
 
-## Escopo Da Etapa
+## API sob teste
 
-A cobertura inicial desta suite inclui:
+| Recurso | URL |
+|---|---|
+| API principal | https://api.practicesoftwaretesting.com |
+| Referência complementar | https://practiceautomatedtesting.com/api |
 
-- lista de produtos
-- detalhe de produto
-- marcas
-- arvore de categorias
-- login
-- consulta de usuario autenticado
-- criacao de carrinho
-- leitura de carrinho
-- cenarios negativos basicos
+---
 
-Ficaram fora desta fase:
+## Cobertura de testes
 
-- checkout mais profundo
-- schema fuzzing
-- Postman ou Newman
-- CI
-- relatorios Allure
+| Área | Cenários | Status |
+|---|---|---|
+| **Catálogo** | Listagem de produtos, detalhes de produto | ✅ |
+| **Autenticação** | Login com credenciais válidas, token de acesso | ✅ |
+| **Usuário autenticado** | Acesso a dados do usuário logado | ✅ |
+| **Carrinho** | Criação, adição de itens, consulta | ✅ |
+| **Cenários negativos** | Respostas de erro esperadas (401, 404, 422) | ✅ |
 
-## Stack Utilizada
+### Resultado da rodada
 
-- `Python`
-- `pytest`
-- `httpx`
+```
+  11 testes executados
+  11 aprovados
+   0 falhas
+  ────────────────
+  Taxa de aprovação: 100%
+```
 
-## Resultado Da Rodada
+---
 
-Na execucao registrada em `2026-04-14`:
+## Stack utilizada
 
-- `7` testes smoke foram aprovados
-- `4` testes negativos foram aprovados
-- `11` testes foram aprovados no total
-- a autenticacao foi validada com a conta demo oficial
-- o carrinho foi validado em criacao e leitura
+| Ferramenta | Uso |
+|---|---|
+| **Python** | Linguagem dos testes |
+| **pytest** | Framework de teste (fixtures, markers, assertions) |
+| **httpx** | Cliente HTTP moderno (async-ready, tipado) |
 
-## Estrutura Do Repositorio
+**Por que httpx em vez de requests?** httpx é mais moderno, suporta async nativamente e tem API compatível com requests. Mostra familiaridade com ferramentas atuais do ecossistema Python.
 
-- [RESUMO-DO-PROJETO.txt](./RESUMO-DO-PROJETO.txt): leitura curta da etapa
-- [docs/](./docs/): escopo, estrategia e guia de revisao
-- [tests/](./tests/): suite automatizada em `pytest + httpx`
-- [execution-reports/](./execution-reports/): relatorio da rodada executada
-- [evidence/](./evidence/): saidas e artefatos da execucao
+---
 
-## Como Executar
+## Como executar
 
-1. Crie um ambiente virtual Python.
-2. Instale as dependencias com `python -m pip install -e .`.
-3. Rode `python -m pytest -m smoke`.
-4. Rode `python -m pytest -m negative`.
+**Pré-requisitos:** Python 3.10+ instalado.
 
-As credenciais demo podem ser sobrescritas por variaveis de ambiente:
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Wesleysc94/toolshop-api-quality-suite.git
+cd toolshop-api-quality-suite
 
-- `PST_API_BASE_URL`
-- `PST_API_EMAIL`
-- `PST_API_PASSWORD`
+# 2. Crie e ative o ambiente virtual
+python -m venv venv
+source venv/bin/activate        # Linux/Mac
+# venv\Scripts\activate         # Windows
 
-## Como Revisar
+# 3. Instale as dependências
+pip install -r requirements.txt
 
-1. Comece por [RESUMO-DO-PROJETO.txt](./RESUMO-DO-PROJETO.txt).
-2. Leia [docs/guia-de-revisao.md](./docs/guia-de-revisao.md).
-3. Veja a suite em [tests/](./tests/).
-4. Consulte o relatorio em [execution-reports/2026-04-14-rodada-smoke-api-01.md](./execution-reports/2026-04-14-rodada-smoke-api-01.md).
-5. Confira as evidencias em [evidence/](./evidence/).
+# 4. Execute os testes
+pytest                          # Roda tudo
+pytest -v                       # Modo detalhado
+pytest --tb=short               # Traceback resumido em caso de falha
+```
+
+---
+
+## Estrutura do repositório
+
+```
+toolshop-api-quality-suite/
+├── README.md                    ← Você está aqui
+├── RESUMO-DO-PROJETO.txt        ← Leitura rápida
+├── 00-LEIA-PRIMEIRO.txt         ← Orientação inicial
+├── requirements.txt             ← Dependências Python
+├── tests/                       ← Suite de testes de API
+├── docs/
+│   ├── escopo.md                ← Endpoints cobertos e decisões
+│   ├── estrategia.md            ← Abordagem de automação
+│   └── guia-de-revisao.md       ← Trilha pra avaliadores
+├── execution-reports/           ← Relatório da rodada executada
+└── evidence/                    ← Saídas e logs da execução
+```
+
+---
+
+## Escopo atual vs. próximas fases
+
+| Coberto agora | Planejado para próximas fases |
+|---|---|
+| ✅ Catálogo (listagem e detalhe) | ⏳ Paginação e filtros avançados |
+| ✅ Autenticação (login e token) | ⏳ Refresh token e expiração |
+| ✅ Usuário autenticado | ⏳ Atualização de perfil |
+| ✅ Carrinho (CRUD básico) | ⏳ Cupons e descontos |
+| ✅ Cenários negativos básicos | ⏳ Rate limiting e validação de schema |
+| | ⏳ CI/CD com GitHub Actions |
+
+---
+
+## Como revisar
+
+1. **[RESUMO-DO-PROJETO.txt](RESUMO-DO-PROJETO.txt)** — Visão geral rápida
+2. **[docs/guia-de-revisao.md](docs/guia-de-revisao.md)** — Trilha de leitura
+3. **[tests/](tests/)** — Código dos testes
+4. **[execution-reports/](execution-reports/)** — Relatório da rodada
+5. **[evidence/](evidence/)** — Logs e saídas
+
+---
+
+## O que este projeto demonstra
+
+- **Testes na camada de serviço** — validação direta da API, independente da interface
+- **Python + pytest** — stack padrão do mercado para automação de API
+- **httpx** — cliente HTTP moderno, mostrando conhecimento de ferramentas atuais
+- **Cenários negativos** — validação de que a API responde corretamente a entradas inválidas
+- **Execução reproduzível** — qualquer pessoa pode clonar, instalar e rodar
