@@ -6,13 +6,16 @@
 [![Testes](https://img.shields.io/badge/Testes-11%20aprovados-brightgreen)]()
 [![Produto](https://img.shields.io/badge/Produto-Practice%20Software%20Testing-blue)](https://practicesoftwaretesting.com/)
 
-📦 **Parte do portfolio:** [toolshop-quality-portfolio](https://github.com/Wesleysc94/toolshop-quality-portfolio)
+🔎 **Portfolio principal:** [Wesleysc94](https://github.com/Wesleysc94/Wesleysc94)
+📦 **Case Study 1:** [toolshop-quality-portfolio](https://github.com/Wesleysc94/toolshop-quality-portfolio)
 
 ---
 
 ## Objetivo
 
-Validar a camada de serviço da aplicação Practice Software Testing através de testes automatizados de API. Enquanto a suite E2E verifica o comportamento do usuário no navegador, esta suite verifica se os dados e regras de negócio estão corretos na API que alimenta a aplicação.
+Validar a camada de serviço da aplicação Practice Software Testing por meio de testes automatizados de API.
+
+Enquanto a automação web verifica o fluxo do usuário no navegador, esta suíte valida se os endpoints respondem corretamente, se as regras básicas de negócio estão coerentes e se os principais erros retornam os status esperados.
 
 ---
 
@@ -21,29 +24,34 @@ Validar a camada de serviço da aplicação Practice Software Testing através d
 | Recurso | URL |
 |---|---|
 | API principal | https://api.practicesoftwaretesting.com |
+| Frontend relacionado | https://practicesoftwaretesting.com/ |
 | Referência complementar | https://practiceautomatedtesting.com/api |
 
 ---
 
-## Cobertura de testes
+## Escopo
 
-| Área | Cenários | Status |
-|---|---|---|
-| **Catálogo** | Listagem de produtos, detalhes de produto | ✅ |
-| **Autenticação** | Login com credenciais válidas, token de acesso | ✅ |
-| **Usuário autenticado** | Acesso a dados do usuário logado | ✅ |
-| **Carrinho** | Criação, adição de itens, consulta | ✅ |
-| **Cenários negativos** | Respostas de erro esperadas (401, 404, 422) | ✅ |
+| Área | O que foi validado |
+|---|---|
+| **Catálogo** | listagem de produtos e detalhe de produto |
+| **Autenticação** | login com credenciais válidas e token de acesso |
+| **Usuário autenticado** | consulta de dados do usuário logado |
+| **Carrinho** | criação, adição de itens e leitura |
+| **Cenários negativos** | respostas esperadas para 401, 404 e 422 |
 
-### Resultado da rodada
+---
+
+## Resultado da rodada
 
 ```
   11 testes executados
   11 aprovados
-   0 falhas
-  ────────────────
+  0 falhas
+  ----------------
   Taxa de aprovação: 100%
 ```
+
+Rodada registrada em 2026-04-14.
 
 ---
 
@@ -51,11 +59,9 @@ Validar a camada de serviço da aplicação Practice Software Testing através d
 
 | Ferramenta | Uso |
 |---|---|
-| **Python** | Linguagem dos testes |
-| **pytest** | Framework de teste (fixtures, markers, assertions) |
-| **httpx** | Cliente HTTP moderno (async-ready, tipado) |
-
-**Por que httpx em vez de requests?** httpx é mais moderno, suporta async nativamente e tem API compatível com requests. Mostra familiaridade com ferramentas atuais do ecossistema Python.
+| **Python** | linguagem dos testes |
+| **pytest** | execução, fixtures, markers e assertions |
+| **httpx** | cliente HTTP usado para chamadas à API |
 
 ---
 
@@ -64,72 +70,35 @@ Validar a camada de serviço da aplicação Practice Software Testing através d
 **Pré-requisitos:** Python 3.10+ instalado.
 
 ```bash
-# 1. Clone o repositório
 git clone https://github.com/Wesleysc94/toolshop-api-quality-suite.git
 cd toolshop-api-quality-suite
 
-# 2. Crie e ative o ambiente virtual
 python -m venv venv
 source venv/bin/activate        # Linux/Mac
 # venv\Scripts\activate         # Windows
 
-# 3. Instale as dependências
 pip install -r requirements.txt
 
-# 4. Execute os testes
-pytest                          # Roda tudo
-pytest -v                       # Modo detalhado
-pytest --tb=short               # Traceback resumido em caso de falha
+pytest
+pytest -v
+pytest --tb=short
 ```
-
----
-
-## Estrutura do repositório
-
-```
-toolshop-api-quality-suite/
-├── README.md                    ← Você está aqui
-├── RESUMO-DO-PROJETO.txt        ← Leitura rápida
-├── 00-LEIA-PRIMEIRO.txt         ← Orientação inicial
-├── requirements.txt             ← Dependências Python
-├── tests/                       ← Suite de testes de API
-├── docs/
-│   ├── escopo.md                ← Endpoints cobertos e decisões
-│   ├── estrategia.md            ← Abordagem de automação
-│   └── guia-de-revisao.md       ← Trilha pra avaliadores
-├── execution-reports/           ← Relatório da rodada executada
-└── evidence/                    ← Saídas e logs da execução
-```
-
----
-
-## Escopo atual vs. próximas fases
-
-| Coberto agora | Planejado para próximas fases |
-|---|---|
-| ✅ Catálogo (listagem e detalhe) | ⏳ Paginação e filtros avançados |
-| ✅ Autenticação (login e token) | ⏳ Refresh token e expiração |
-| ✅ Usuário autenticado | ⏳ Atualização de perfil |
-| ✅ Carrinho (CRUD básico) | ⏳ Cupons e descontos |
-| ✅ Cenários negativos básicos | ⏳ Rate limiting e validação de schema |
-| | ⏳ CI/CD com GitHub Actions |
 
 ---
 
 ## Como revisar
 
-1. **[RESUMO-DO-PROJETO.txt](RESUMO-DO-PROJETO.txt)** — Visão geral rápida
-2. **[docs/guia-de-revisao.md](docs/guia-de-revisao.md)** — Trilha de leitura
-3. **[tests/](tests/)** — Código dos testes
-4. **[execution-reports/](execution-reports/)** — Relatório da rodada
-5. **[evidence/](evidence/)** — Logs e saídas
+1. Leia o [RESUMO-DO-PROJETO.txt](RESUMO-DO-PROJETO.txt)
+2. Consulte o [docs/guia-de-revisao.md](docs/guia-de-revisao.md)
+3. Abra o escopo em [docs/escopo-da-api.md](docs/escopo-da-api.md)
+4. Revise os testes em [tests/](tests/)
+5. Confira o relatório da rodada em [execution-reports/](execution-reports/)
 
 ---
 
-## O que este projeto demonstra
+## O que este projeto entrega
 
-- **Testes na camada de serviço** — validação direta da API, independente da interface
-- **Python + pytest** — stack padrão do mercado para automação de API
-- **httpx** — cliente HTTP moderno, mostrando conhecimento de ferramentas atuais
-- **Cenários negativos** — validação de que a API responde corretamente a entradas inválidas
-- **Execução reproduzível** — qualquer pessoa pode clonar, instalar e rodar
+- **Validação na camada de serviço** — sem depender da interface web
+- **Automação em Python com pytest** — stack comum no mercado para API
+- **Cenários positivos e negativos** — não apenas fluxo feliz
+- **Instalação e execução simples** — clone, instale e rode em poucos passos

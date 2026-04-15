@@ -4,7 +4,7 @@
 
 Este repositorio apresenta a primeira etapa de automacao de API do ecossistema **Practice Software Testing**.
 
-O foco aqui e mostrar, de forma clara:
+O foco aqui e registrar:
 
 - quais endpoints entraram na primeira fase
 - como a suite foi organizada
@@ -50,3 +50,9 @@ As validacoes de autenticacao usam, por padrao, a conta demo oficial:
 - senha: `welcome01`
 
 As credenciais podem ser substituidas por variaveis de ambiente.
+
+## Navegacao do portfolio
+
+- portfolio principal: https://github.com/Wesleysc94/Wesleysc94
+- hub do Case Study 1: https://github.com/Wesleysc94/toolshop-quality-portfolio
+- Case Study 2: https://github.com/Wesleysc94/swaglab-quality-suite
